@@ -1,11 +1,11 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
+import Navbar from "./Components/Navbar/Navbar";
 import MainContent from "./Components/MainContent/MainContent";
 
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Navbar></Navbar>
       <MainContent words="HELP"></MainContent>
     </div>
   );
