@@ -1,8 +1,0 @@
-.maincontent {
-    height: 100%;
-    background-color: green;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex: 1;
-}
