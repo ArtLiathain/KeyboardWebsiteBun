@@ -1,13 +1,20 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
-import MainContent from "./Components/MainContent/MainContent";
+import Navbar from "./Components/Navbar/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Pages/Home/Home";
+import GroupBuys from "./Components/Pages/GroupBuys/GroupBuys";
+import GroupBuyers from "./Components/Pages/GroupBuyers/GroupBuyers";
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-      <MainContent words="HELP"></MainContent>
-    </div>
+    <>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/GroupBuys" element={<GroupBuys/>}/>
+        <Route path="/GroupBuyers" element={<GroupBuyers/>}/>
+      </Routes>
+    </>
   );
 }
 
