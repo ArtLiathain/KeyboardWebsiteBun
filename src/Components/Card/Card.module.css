@@ -1,6 +1,5 @@
 .card {
-    border-radius: 2%;
-    background-color: green;
+    background-color: #666;
     min-height : 100;
     box-shadow: 0px 2px;
 }
