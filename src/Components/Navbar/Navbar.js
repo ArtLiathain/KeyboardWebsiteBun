@@ -2,26 +2,32 @@ import React from "react";
 import styled from "./Navbar.module.css";
 import { Link, useMatch, useResolvedPath} from "react-router-dom";
 
+
 const Navbar = () => {
   return (
     <nav className={styled.navbar}>
-      <Link to="/" className={styled.title}>SwitchBoards</Link>
+
+      <Link to="/" className={styled.title}>
+        Home
+      </Link>
       <ul>
-          <CustomLink to="/Switches" >Switches</CustomLink>
-          <CustomLink to="/Distributors">Distributors</CustomLink>
+        <CustomList href="/GroupBuys">GroupBuys</CustomList>
+        <CustomList href="/GroupBuyers">GroupBuyers</CustomList>
       </ul>
     </nav>
   );
 };
 
-const CustomLink = ({to,children, ...props}) => {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({path : resolvedPath.pathname, end : true})
+
+const CustomList = ({ href, children, ...props }) => {
+  const resolvedPath = useResolvedPath(href);
+  const isActive = useMatch({ path : resolvedPath.pathname, end : true})
+  
   return (
-    <li className={isActive ? styled.active : ""}>
-      <Link to = {to}>{children}</Link>
+    <li className={isActive ? styled.active : "" }>
+      <Link to={href}>{children}</Link>
     </li>
-  )
-}
+  );
+};
 
 export default Navbar;
