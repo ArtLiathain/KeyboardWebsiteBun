@@ -1,20 +1,27 @@
 import React from "react";
 import styled from "./Navbar.module.css";
+import { Link, useMatch, useResolvedPath} from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className={styled.navbar}>
-      <a href="/Switchboards" className={styled.title}>SwitchBoards</a>
+      <Link to="/" className={styled.title}>SwitchBoards</Link>
       <ul>
-        <li className={styled.active}>
-          <a href="/Switches" >Switches</a>
-        </li>
-        <li>
-          <a href="/Distributors">Distributors</a>
-        </li>
+          <CustomLink to="/Switches" >Switches</CustomLink>
+          <CustomLink to="/Distributors">Distributors</CustomLink>
       </ul>
     </nav>
   );
 };
+
+const CustomLink = ({to,children, ...props}) => {
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({path : resolvedPath.pathname, end : true})
+  return (
+    <li className={isActive ? styled.active : ""}>
+      <Link to = {to}>{children}</Link>
+    </li>
+  )
+}
 
 export default Navbar;
