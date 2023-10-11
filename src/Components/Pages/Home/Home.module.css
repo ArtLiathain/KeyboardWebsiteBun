@@ -1,4 +1,9 @@
 .home {
     flex: 1;
     background-color: blue;
+    display: grid;
+    gap: 4%;
+    padding: 10px;
+    grid-template-columns: auto auto auto;
+
 }

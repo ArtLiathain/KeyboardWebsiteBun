@@ -4,9 +4,12 @@ import styled from "./Home.module.css"
 
 const Home = () => {
   return (
-    <Card classes={styled.home}>
-      <h1>Home</h1>
-    </Card>
+    <div className={styled.home}>
+      <Card title="hello">Home</Card>
+      <Card>Temp</Card>
+      <Card>3</Card>
+      <Card title="hell">4</Card>
+    </div>
   );
 };
 

@@ -4,9 +4,9 @@ import styled from "./GroupBuyers.module.css"
 
 const GroupBuyers = () => {
   return (
-    <Card classes={styled.groupBuyers}>
+    <div className={styled.groupBuyers}>
       <h1>GroupBuyers</h1>
-    </Card>
+    </div>
   );
 };
 

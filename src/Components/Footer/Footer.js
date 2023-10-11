@@ -4,9 +4,9 @@ import Card from "../Card/Card";
 
 const Footer = () => {
     return (
-        <Card>
+        <div>
             <h1>Footer</h1>
-        </Card>
+        </div>
     )
 }
 export default Footer
