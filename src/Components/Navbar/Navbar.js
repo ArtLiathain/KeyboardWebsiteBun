@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "./Navbar.module.css";
-import { Link, resolvePath, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, useMatch, useResolvedPath} from "react-router-dom";
+
 
 const Navbar = () => {
   return (
     <nav className={styled.navbar}>
+
       <Link to="/" className={styled.title}>
         Home
       </Link>
@@ -15,6 +17,7 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 const CustomList = ({ href, children, ...props }) => {
   const resolvedPath = useResolvedPath(href);
